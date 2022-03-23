@@ -1,0 +1,40 @@
+# config.sample.yaml
+fastAPI:
+  origins: ["http://localhost:4200"]
+
+tokens:
+  # For dev env
+  # Aave uses their own testnet tokens to ensure they are good
+  # https://aave.github.io/aave-addresses/mumbai.json
+  # find the latest token addresses from the above repo
+  #
+  DAI: "0x001B3B4d0F3714Ca98ba10F6042DaEbF0B1B7b6F"
+  amDAI: "0x639cB7b21ee2161DF9c882483C9D55c90c20Ca3e"
+  #
+  USDC: "0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e"
+  amUSDC: "0x2271e3Fef9e15046d09E1d78a8FF038c691E9Cf9"
+  #
+  amWMATIC: "0xF45444171435d0aCB08a8af493837eF18e86EE27"
+
+decimals:
+  DAI: "ether"
+  amDAI: "ether"
+  MATIC: "ether"
+  USDC: "picoether"
+  amUSDC: "picoether"
+  amWMATIC: "ether"
+
+networks:
+  rpc_url: "https://polygon-mumbai.infura.io/v3/<your project ID>"
+  chain_id: 80001
+  miner_tip_price: 13000000000 # in wei
+  gas_price: 21000000000 # in wei
+  default_gas_units: 5000000 # 5,00,000, keep this up to date
+  timeout: 300 # 5 minuets
+  lending_pool_addresses_provider: "0x178113104fEcbcD7fF8669a0150721e231F0FD4B"
+  protocol_data_provider_address: "0xFA3bD19110d986c5e5E9DD5F69362d05035D045B"
+
+wallet: # Brew Gas Station. Brew managed wallet for subsidizing the gas fees
+  address: "0x..."
+  sk: "..."
+  gas_allowance: 500000000000000000 #in wei i.e. 0.5 MATIC
